@@ -1,10 +1,10 @@
-%global rvm_version_sha1 2e57da3
+%global rvm_version_sha1 78d31e7 
 %global rvm_dir /usr/lib/rvm
 %global rvm_group rvm
 
 Name: rvm-ruby
 Summary: Ruby Version Manager
-Version: 1.6.3
+Version: 1.6.32
 Release: 1%{?dist:%{dist}}
 License: ASL 2.0
 URL: http://rvm.beginrescueend.com/
@@ -111,5 +111,8 @@ exit 0
 %{_mandir}/man1/*
 
 %changelog
+* Thu Aug 4 2011 Matthew Kent <mkent@magoazul.com> - 1.6.32-1
+- New upstream release
+
 * Tue Apr 19 2011 Matthew Kent <mkent@magoazul.com> - 1.6.3-1
 - Initial package based off Gentoo work
