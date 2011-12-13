@@ -1,10 +1,10 @@
-%global rvm_version_sha1 78d31e7 
+%global rvm_version_sha1 1d4af11
 %global rvm_dir /usr/lib/rvm
 %global rvm_group rvm
 
 Name: rvm-ruby
 Summary: Ruby Version Manager
-Version: 1.6.32
+Version: 1.10.0
 Release: 1%{?dist:%{dist}}
 License: ASL 2.0
 URL: http://rvm.beginrescueend.com/
@@ -49,8 +49,7 @@ done
 
 # Install everything into one directory
 rvm_ignore_rvmrc=1 \
-  rvm_user_install=0 \
-  rvm_prefix="$(dirname %{buildroot}%{rvm_dir})/" \
+  rvm_user_install_flag=0 \
   rvm_path="%{buildroot}%{rvm_dir}" \
   rvm_bin_path="%{buildroot}%{_bindir}" \
   rvm_man_path="%{buildroot}%{_mandir}" \
@@ -76,8 +75,8 @@ if [[ ! -s "\${HOME}/.rvm/scripts/rvm" ]]; then
     fi
   done
 
-  export rvm_user_install=1
-  export rvm_prefix="$(dirname %{rvm_dir})/"
+  export rvm_user_install_flag=1
+  export rvm_path="%{rvm_dir}"
 fi
 END_OF_RVMRC
 
@@ -95,6 +94,8 @@ END_OF_RVMSH
 
 chmod 755 %{buildroot}%{_sysconfdir}/profile.d/rvm.sh
 
+mv %{buildroot}%{_bindir}/rake %{buildroot}%{_bindir}/rvm-rake
+
 %clean
 rm -rf %{buildroot}
 
@@ -111,6 +112,12 @@ exit 0
 %{_mandir}/man1/*
 
 %changelog
+* Tue Dec 13 2011 Matthew Kent <mkent@magoazul.com> - 1.10.0-1
+- New upstream release
+- Drop rvm_prefix
+- Rename rvm_user_install to rvm_user_install_flag
+- Rename rake wrapper to rvm-rake
+
 * Thu Aug 4 2011 Matthew Kent <mkent@magoazul.com> - 1.6.32-1
 - New upstream release
 
