@@ -5,7 +5,7 @@
 Name: rvm-ruby
 Summary: Ruby Version Manager
 Version: 1.10.0
-Release: 1%{?dist:%{dist}}
+Release: 2%{?dist:%{dist}}
 License: ASL 2.0
 URL: http://rvm.beginrescueend.com/
 Group: Applications/System
@@ -20,7 +20,7 @@ Requires: bash curl git
 # Basics for building ruby 1.8/1.9
 Requires: gcc-c++ patch readline readline-devel zlib-devel libyaml-devel libffi-devel openssl-devel
 # Used by the scripts
-Requires: sed grep tar gzip bzip2 make
+Requires: sed grep tar gzip bzip2 make file
 
 %description
 RVM is the Ruby Version Manager (rvm). It manages Ruby interpreter environments
@@ -112,11 +112,12 @@ exit 0
 %{_mandir}/man1/*
 
 %changelog
-* Tue Dec 13 2011 Matthew Kent <mkent@magoazul.com> - 1.10.0-1
+* Tue Dec 13 2011 Matthew Kent <mkent@magoazul.com> - 1.10.0-2
 - New upstream release
 - Drop rvm_prefix
 - Rename rvm_user_install to rvm_user_install_flag
 - Rename rake wrapper to rvm-rake
+- Add file dependency
 
 * Thu Aug 4 2011 Matthew Kent <mkent@magoazul.com> - 1.6.32-1
 - New upstream release
