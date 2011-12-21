@@ -28,7 +28,8 @@ and switching between them.
 
 This package is meant for use by multiple users maintaining a shared copy of
 RVM. Users added to the '%{rvm_group}' group will be able to modify all aspects
-of RVM. These users will also have their default umask changed to g+w (0022) to
+of RVM. These users will also have their default umask modified ("g+w") to allow
+group write permission (usually resulting in a umask of "0002") in order to
 ensure correct permissions for the shared RVM content.
 
 RVM is activated for all logins by default. To disable remove 
