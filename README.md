@@ -37,6 +37,10 @@ This package were created for numerous reasons:
 Supported Distributions
 -----------------------
 
+* CentOS 6.2
+* CentOS 6.1
+* CentOS 6.0
+* CentOS 5.7
 * CentOS 5.6
 * CentOS 5.5
 
