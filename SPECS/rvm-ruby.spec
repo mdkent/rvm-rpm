@@ -1,10 +1,10 @@
-%global rvm_version_sha1 1d4af11
+%global rvm_version_sha1 87b7d1b
 %global rvm_dir /usr/lib/rvm
 %global rvm_group rvm
 
 Name: rvm-ruby
 Summary: Ruby Version Manager
-Version: 1.10.0
+Version: 1.13.8
 Release: 2%{?dist:%{dist}}
 License: ASL 2.0
 URL: http://rvm.beginrescueend.com/
@@ -95,7 +95,9 @@ END_OF_RVMSH
 
 chmod 755 %{buildroot}%{_sysconfdir}/profile.d/rvm.sh
 
+
 mv %{buildroot}%{_bindir}/rake %{buildroot}%{_bindir}/rvm-rake
+mv %{buildroot}%{_bindir}/bundle %{buildroot}%{_bindir}/rvm-bundle
 
 %clean
 rm -rf %{buildroot}
@@ -113,6 +115,9 @@ exit 0
 %{_mandir}/man1/*
 
 %changelog
+* Wed May 23 2012 Seth Call <sethcall@gmail.com> - 1.13.8-2
+- New upstream release
+
 * Tue Dec 13 2011 Matthew Kent <mkent@magoazul.com> - 1.10.0-2
 - New upstream release
 - Drop rvm_prefix

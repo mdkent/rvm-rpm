@@ -4,6 +4,15 @@ RVM RPM Package
 RPM package for [rvm](http://rvm.beginrescueend.com/) suitable for CentOS or
 RHEL.
 
+Why the fork?
+-------------
+I wanted the most recent stable RVM.  At the time of this fork, it was 1.13.8.
+Once I attempted an rpmbuild with that tar, I found that 1.13.8 created a /usr/bin/bundle file,
+and this prevented rpmbuild from succeeding.
+ 
+So, I updated the spec file to do change the name of /usr/bin/bundle to /usr/bin/rvm-bundle,
+because the renaming was being done with /usr/bin/rake created by rvm (consistent with original author)
+
 
 About
 -----
