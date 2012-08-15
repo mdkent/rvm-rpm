@@ -1,17 +1,17 @@
-%global rvm_version_sha1 1d4af11
+%global rvm_version_sha1 e951976
 %global rvm_dir /usr/lib/rvm
 %global rvm_group rvm
 
 Name: rvm-ruby
 Summary: Ruby Version Manager
-Version: 1.10.0
-Release: 2%{?dist:%{dist}}
+Version: 1.15.0
+Release: 4%{?dist:%{dist}}
 License: ASL 2.0
 URL: http://rvm.beginrescueend.com/
 Group: Applications/System
 # Downloaded with
 # wget --no-check-certificate http://github.com/wayneeseguin/rvm/tarball/<version>
-Source: wayneeseguin-rvm-%{version}-0-g%{rvm_version_sha1}.tar.gz
+Source: wayneeseguin-rvm-%{version}-4-g%{rvm_version_sha1}.zip
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-%(%{__id_u} -n)
 Requires(pre): shadow-utils
@@ -111,8 +111,13 @@ exit 0
 %attr(-,root,%{rvm_group}) %{rvm_dir}
 %{_bindir}/rvm*
 %{_mandir}/man1/*
+/usr/bin/bundle
 
 %changelog
+* Wed Aug 15 2012 Dmitri Muntean <dmitry.muntean@gmail.com> - 1.15.0-4
+- New upstream release
+- Add "/usr/bin/bundle" to file list
+
 * Tue Dec 13 2011 Matthew Kent <mkent@magoazul.com> - 1.10.0-2
 - New upstream release
 - Drop rvm_prefix
