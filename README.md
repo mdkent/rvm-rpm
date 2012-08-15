@@ -30,20 +30,26 @@ This package were created for numerous reasons:
 1. To simplify the install process.
 2. To more easily install rvm during a Kickstart install.
 3. To simplify the upgrade process when using package management via
-   [Chef](http://opscode.com/chef/) or [Puppet](http://www.puppetlabs.com/).
+   [Chef](http://opscode.com/chef/).
 4. To conform to standard filesystem paths.
 
 
 Supported Distributions
 -----------------------
 
-* CentOS 6.3
 * CentOS 6.2
 * CentOS 6.1
 * CentOS 6.0
 * CentOS 5.7
 * CentOS 5.6
 * CentOS 5.5
+
+
+Support
+-------
+
+For issues with this package please contact me via the github Issue tracker or
+directly at mkent@magoazul.com.
 
 
 Credit
